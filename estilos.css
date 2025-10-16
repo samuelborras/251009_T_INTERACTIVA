@@ -1,0 +1,78 @@
+:root {
+  --fondo: #001ed1;
+  --texto: #e8eef6;
+  --resalte: #9d0142;
+  --hover: #ef0027;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: var(--fondo);
+  color: var(--texto);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contenedor-central {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+/* --- CONTENEDOR INTERACTIVO --- */
+#contenedor-p5 {
+  flex: 1;
+  min-width: 300px;
+  min-height: 360px;
+  border-radius: 1em;
+  border: 2px dashed rgb(251, 231, 20);
+  background-color: var(--resalte);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* 🔹 centramos el canvas dentro */
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover (solo brillo/sombra, sin mover ni agrandar) */
+#contenedor-p5:hover {
+  background-color: var(--hover);
+  box-shadow: 0 0 30px rgb(251, 231, 20);
+  border-color: rgb(251, 231, 20);
+}
+
+/* --- CANVAS DENTRO DEL CONTENEDOR --- */
+#contenedor-p5 canvas {
+  width: 80%;    /* 🔹 el canvas ocupa el 80% del contenedor */
+  height: auto;
+  max-width: 400px;
+  max-height: 300px;
+  border-radius: 0.5em;
+  display: block;
+}
+
+/* --- CONTENEDOR DERECHO --- */
+.contenedor-derecho {
+  flex: 1;
+  min-width: 250px;
+  padding: 16px;
+  background-color: rgb(157, 1, 66);
+  border-radius: 1em;
+  line-height: 1.5;
+}
